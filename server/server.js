@@ -1,29 +1,24 @@
-const express = require('express');
-const cors = require('cors');
 const { Pool } = require('pg');
-
-const app = express();
-app.use(cors());
-app.use(express.json());
-
+//Aki começa a conexão do banco de dados com o expresse com a senha do meu postgre,usuário,localhost e o banco 
 const pool = new Pool({
-  user: 'seu_usuario',
-  host: 'localhost',
-  database: 'agenda_db',
-  password: 'sua_senha',
-  port: 5432,
+  connectionString: "postgres://postgres:1402@localhost:5432/projeto",
 });
 
-app.get('/agenda', async (req, res) => {
-  try {
-    const result = await pool.query('SELECT * FROM agenda');
-    res.json(result.rows);
-  } catch (err) {
-    res.status(500).send(err.message);
+//O connect e utilizado para estabelecer a conexão  jumtamento com o POOL metódo mais eficaz(atualmete) 
+//o poll vem do pacote node PG qual esa sendo utilizado 
+pool.connect((err, client, done) => {
+  if (err) {
+    return console.error('Error fetching client from pool', err);
   }
-});
-
-const PORT = 5000;
-app.listen(PORT, () => {
-  console.log(`Servidor rodando na porta ${PORT}`);
+  
+  //O metodo query apresenta os dados do banco,ele executa comandos SQL no exemplo utilizei o * para listar todos os dados dos usuários
+  client.query('SELECT * FROM projeto_bancodedados', (err, result) => {
+    done(); 
+    if (err) {
+      return console.error('Error running query', err);
+    }
+    
+    // Exibe os resultados da consulta
+    console.log(result.rows);
+  });
 });
