@@ -19,6 +19,6 @@ pool.connect((err, client, done) => {
     }
     
     // Exibe os resultados da consulta
-    console.log(result.rows);
+    console.table(result.rows);
   });
 });
