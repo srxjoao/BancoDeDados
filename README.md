@@ -1,2 +1,8 @@
-# BancoDeDados
-Primeiro projeto da disciplina banco de dados 2 Com o intuito de listar uma tabela com dados de clientes,com uma conexão feita entre banco de dados e o framework express atuando no BACKEND do projeto e REACT no FRONTEND do projeto
+# React + Vite
+
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+
+Currently, two official plugins are available:
+
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh

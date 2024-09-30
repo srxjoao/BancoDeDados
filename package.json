@@ -1,18 +1,26 @@
 {
-  "name": "bancodedados",
-  "version": "1.0.0",
-  "description": "Primeiro projeto da disciplina banco de dados 2 Com o intuito de listar uma tabela com dados de clientes,com uma conexão feita entre banco de dados e o framework express atuando no BACKEND do projeto e REACT no FRONTEND do projeto",
-  "main": "index.js",
+  "name": "aula02",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "axios": "^1.7.7",
-    "bootstrap": "^5.3.3",
-    "cors": "^2.8.5",
-    "express": "^4.21.0",
-    "pg": "^8.13.0"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.55",
+    "@types/react-dom": "^18.2.19",
+    "@vitejs/plugin-react": "^4.2.1",
+    "eslint": "^8.56.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "vite": "^5.1.0"
   }
 }
